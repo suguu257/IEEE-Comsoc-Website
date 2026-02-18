@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { events } from "../data/events"
 import { useState } from "react"
+import "../styles/EventDetails.css"
 
 function EventDetails() {
   const { id } = useParams()
@@ -9,41 +10,76 @@ function EventDetails() {
   const [currentImage, setCurrentImage] = useState(0)
 
   if (!event) {
-    return <h2>Event not found</h2>
+    return <h2 className="event-not-found">Event not found</h2>
   }
 
   const nextImage = () => {
-    setCurrentImage((prev) =>
+    setCurrentImage(prev =>
       prev === event.images.length - 1 ? 0 : prev + 1
     )
   }
 
   const prevImage = () => {
-    setCurrentImage((prev) =>
+    setCurrentImage(prev =>
       prev === 0 ? event.images.length - 1 : prev - 1
     )
   }
 
   return (
-    <div style={{ padding: "40px" }}>
-      <h1>{event.title}</h1>
-      <p style={{ marginBottom: "30px" }}>{event.content}</p>
+    <div className="event-details-page">
 
-      <div style={{ textAlign: "center" }}>
-        <button onClick={prevImage}>◀</button>
+      <div className="event-details-container">
 
-        <img
-          src={event.images[currentImage]}
-          alt="event"
-          style={{
-            width: "600px",
-            height: "400px",
-            objectFit: "cover",
-            margin: "0 20px"
-          }}
-        />
+        {/* TITLE */}
+        <div className="event-header">
+          <h1>{event.title}</h1>
+          <p className="event-subtitle">{event.description}</p>
+        </div>
 
-        <button onClick={nextImage}>▶</button>
+        {/* SLIDER */}
+        <div className="event-slider">
+
+          <div className="event-slider-wrapper">
+            <img
+              key={currentImage}
+              src={event.images[currentImage]}
+              alt={event.title}
+              className="event-slider-image"
+            />
+
+            <button
+              className="slider-arrow left"
+              onClick={prevImage}
+            >
+              ◀
+            </button>
+
+            <button
+              className="slider-arrow right"
+              onClick={nextImage}
+            >
+              ▶
+            </button>
+          </div>
+
+          {/* DOTS */}
+          <div className="slider-dots">
+            {event.images.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${index === currentImage ? "active" : ""}`}
+                onClick={() => setCurrentImage(index)}
+              />
+            ))}
+          </div>
+
+        </div>
+
+        {/* CONTENT */}
+        <div className="event-content">
+          <p>{event.content}</p>
+        </div>
+
       </div>
     </div>
   )
