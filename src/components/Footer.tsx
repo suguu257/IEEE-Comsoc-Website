@@ -7,10 +7,10 @@ function Footer() {
         <h3>IEEE ComSoc</h3>
 
         <div className="footer-links">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Events</a>
-          <a href="#">Team</a>
+          <a href="/home">Home</a>
+          <a href="/about">About</a>
+          <a href="/events">Events</a>
+          <a href="/team">Team</a>
         </div>
 
         <p className="footer-copy">

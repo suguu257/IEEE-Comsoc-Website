@@ -1,4 +1,3 @@
-/* ================= INTRO SCREEN ================= */
 
 .intro-screen {
   height: 100vh;
@@ -10,9 +9,6 @@
   margin-bottom: 120px;   
 }
 
-
-/* Cursor Energy */
-
 .cursor-energy {
   position: fixed;
   width: 500px;
@@ -23,14 +19,10 @@
   z-index: 0;
 }
 
-/* Logo Wrapper */
-
 .intro-logo-wrapper {
   position: relative;
   z-index: 2;
 }
-
-/* Logo Base */
 
 .intro-logo {
   position: relative;
@@ -48,13 +40,9 @@
              electricFlicker 3s infinite;
 }
 
-/* Reduced glow */
-
 .intro-logo {
-  text-shadow: 0 0 15px rgba(255,106,0,0.6);
+  text-shadow: 0 0 5px rgba(255,106,0,0.6);
 }
-
-/* Electric Flicker */
 
 @keyframes electricFlicker {
   0%,100% { opacity: 1; }
@@ -63,34 +51,9 @@
   96% { opacity: 1; }
 }
 
-/* Gradient movement */
-
 @keyframes gradientShift {
   to { background-position: 300% center; }
 }
-
-/* Electric Overlay Flash */
-
-.electric-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,0.4) 50%,
-    transparent 70%
-  );
-  animation: electricFlash 4s infinite;
-}
-
-@keyframes electricFlash {
-  0% { transform: translateX(-100%); opacity: 0; }
-  40% { opacity: 0.8; }
-  60% { transform: translateX(100%); opacity: 0; }
-  100% { opacity: 0; }
-}
-
-/* ELECTRIC SPARKS */
 
 .sparks-container::before,
 .sparks-container::after {
@@ -111,8 +74,6 @@
   100% { transform: translateY(-120px); opacity: 0; }
 }
 
-/* Scroll indicator */
-
 .scroll-indicator {
   position: absolute;
   bottom: 40px;
@@ -125,25 +86,18 @@
   50% { transform: translateY(10px); }
 }
 
-/* ================= HERO ================= */
-
 .hero {
   min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 30px;  /* was 80px */
+  padding: 120px 30px;  
   margin-bottom: 120px;
 }
 .home-section {
   padding: 0 60px;
   margin-bottom: 140px;
 }
-
-.cta {
-  margin: 140px 60px;
-}
-
 
 .hero-content {
   max-width: 900px;
@@ -176,8 +130,6 @@
   justify-content: center;
   gap: 20px;
 }
-
-/* ================= BUTTONS ================= */
 
 .btn-outline {
   padding: 14px 28px;
@@ -215,8 +167,6 @@
   font-size: 14px;
 }
 
-/* Sections */
-
 .home-section {
   padding: 0 60px;
 }
@@ -227,8 +177,6 @@
   color: #ff6a00;
   text-align: center;
 }
-
-/* About Card */
 
 .about-hero {
   padding: 60px;
@@ -261,8 +209,6 @@
   margin-bottom: 15px;
 }
 
-/* Focus Cards */
-
 .focus-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -281,8 +227,6 @@
     0 0 25px rgba(255,106,0,0.25),
     0 0 50px rgba(255,106,0,0.1);
 }
-
-/* Events */
 
 .events-grid {
   display: grid;
@@ -312,8 +256,6 @@
   width: auto;
 }
 
-/* Image zoom only */
-
 .slider img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -325,8 +267,6 @@
 .event-preview:hover .slider img {
   transform: scale(1.05);
 }
-
-/* Slider Button */
 
 .slider {
   position: relative;
@@ -356,10 +296,8 @@
   box-shadow: 0 0 15px rgba(255,106,0,0.5);
 }
 
-/* CTA */
-
 .cta {
-  margin: 40px 60px;
+  margin: 140px 60px;
   padding: 70px;
   text-align: center;
   transition: 0.4s ease;
@@ -382,8 +320,6 @@
   margin-bottom: 25px;
   opacity: 0.85;
 }
-
-/* Utility */
 
 .center {
   text-align: center;
